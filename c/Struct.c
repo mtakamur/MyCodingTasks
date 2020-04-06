@@ -34,7 +34,7 @@ void MakeHuman(Human* target)
     printf("Name > ");
     scanf("%s", name);
 
-    printf("\nAge > ");
+    printf("Age > ");
     scanf("%d", &age);
 
     //target->NAME = name;
@@ -45,7 +45,9 @@ void MakeHuman(Human* target)
 
 void ShowHuman(Human* target)
 {
+    printf("////////// Showing property of the human //////////\n");
     printf("Name = %s\n", target->NAME);
     printf("Age = %d\n", target->AGE);
+    printf("///////////////////////////////////////////////////\n");
     return;
 }
