@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     //fwrite(MY_NAME, sizeof(MY_NAME), 1, bin_file);
     fwrite(&buffer, sizeof(int), 5, bin_file);
-    fwrite(&buffer, sizeof(buffer), 1, bin_file); // Same as the above
+    //fwrite(&buffer, sizeof(buffer), 1, bin_file); // Same as the above
     /*
         Written data size is calculated as
         (sizeof) * (number of data)
