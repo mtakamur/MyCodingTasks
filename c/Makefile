@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Struct FileOperation ReadParameter GetOption DefineMacro ProcessTime_function ProcessTime_macro MemoryAllocate
+OBJECTS=Struct FileOperation ReadParameter GetOption DefineMacro ProcessTime_function ProcessTime_macro MemoryAllocate Strtok
 
 all: ${OBJECTS}
 
@@ -28,6 +28,9 @@ ProcessTime_macro: ProcessTime_macro.c
 
 MemoryAllocate: MemoryAllocate.c
 	${CXX} ${CFLAGS} MemoryAllocate.c -o MemoryAllocate
+
+Strtok: Strtok.c
+	${CXX} ${CFLAGS} Strtok.c -o Strtok
 
 clean:
 	rm -rf *.o normal_file.dat binary_file.dat ${OBJECTS}
