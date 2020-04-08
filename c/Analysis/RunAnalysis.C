@@ -12,7 +12,7 @@ void RunAnalysis()
 
     TCanvas *ctime = new TCanvas("ctime", "ctime", 1000, 700);
 
-    TH1D *hdummy_time = new TH1D("hdummy_time", ";Time[#mus];Entries", 100, 0, 0.2);
+    TH1D *hdummy_time = new TH1D("hdummy_time", ";Time[#mus];Entries", 100, 0, 0.5);
     hdummy_time->GetYaxis()->SetRangeUser(0, 3.0e+5);
     hdummy_time->SetLineColor(kWhite);
 
