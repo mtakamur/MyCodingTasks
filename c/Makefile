@@ -1,7 +1,8 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Struct FileOperation ReadParameter GetOption DefineMacro ProcessTime_function ProcessTime_macro MemoryAllocate Strtok
+OBJECTS=Struct FileOperation ReadParameter GetOption DefineMacro ProcessTime_function ProcessTime_macro MemoryAllocate Strtok PointerVector
+
 
 all: ${OBJECTS}
 
@@ -31,6 +32,9 @@ MemoryAllocate: MemoryAllocate.c
 
 Strtok: Strtok.c
 	${CXX} ${CFLAGS} Strtok.c -o Strtok
+
+PointerVector: PointerVector.c
+	${CXX} ${CFLAGS} PointerVector.c -o PointerVector
 
 clean:
 	rm -rf *.o normal_file.dat binary_file.dat ${OBJECTS}
