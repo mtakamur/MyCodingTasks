@@ -1,20 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int GetFactorial(int n);
+int GetFactorial(int n)
+{
+    if(n < 1) return 1;
+    return n * GetFactorial(n - 1);
+}
 
 int main()
 {
-    cout << GetFactorial(5) << endl;
+    int a = 5;
+    cout << "The factorial of " << a << " = " << GetFactorial(a) << endl;
     return 0;
-}
-
-int GetFactorial(int n)
-{
-    static int i;
-    while(n>0)
-    {
-        i = n * GetFactorial(n - 1);
-    }
-    return i;
 }

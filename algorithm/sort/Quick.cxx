@@ -88,7 +88,7 @@ int CheckFullDuplication(int t[], int l, int m)
 }
 
 int Rescan(int t[], int l, int m)
-{
+{// Recursive search
     if(l == m) return 0;
     int s = CheckFullDuplication(t, l, m);
     //std::cout << s << std::endl;
