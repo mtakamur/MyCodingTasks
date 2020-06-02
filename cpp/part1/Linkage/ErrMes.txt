@@ -1,0 +1,6 @@
+g++ -c Function.cxx
+g++ -c Main.cxx
+g++ -o Main Function.o Main.o
+/usr/bin/ld: Main.o:(.bss+0x0): multiple definition of `val'; Function.o:(.bss+0x0): first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:14: Main] Error 1
