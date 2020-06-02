@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc AddressPass GetString
+OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc AddressPass GetString StaticVal Scope
 
 all: ${OBJECTS}
 
@@ -28,6 +28,12 @@ AddressPass: AddressPass.cxx
 
 GetString: GetString.cxx
 	${CXX} ${CFLAGS} GetString.cxx -o GetString
+
+StaticVal: StaticVal.cxx
+	${CXX} ${CFLAGS} StaticVal.cxx -o StaticVal
+
+Scope: Scope.cxx
+	${CXX} ${CFLAGS} Scope.cxx -o Scope
 
 clean:
 	rm -rf *.o ${OBJECTS}
