@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc
+OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc AddressPass GetString
 
 all: ${OBJECTS}
 
@@ -22,6 +22,12 @@ ConditionalOperator: ConditionalOperator.cxx
 
 BitCalc: BitCalc.cxx
 	${CXX} ${CFLAGS} BitCalc.cxx -o BitCalc
+
+AddressPass: AddressPass.cxx
+	${CXX} ${CFLAGS} AddressPass.cxx -o AddressPass
+
+GetString: GetString.cxx
+	${CXX} ${CFLAGS} GetString.cxx -o GetString
 
 clean:
 	rm -rf *.o ${OBJECTS}

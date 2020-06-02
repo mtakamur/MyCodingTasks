@@ -1,13 +1,18 @@
 #include <iostream>
 
+void ShowValue(int &val)
+{
+    int val_cp = val;
+    val = 0;
+    
+    printf("val    = %d\n", val);
+    printf("val_cp = %d\n", val_cp);
+    return;
+}
+
 int main()
 {
-    int a = 0;
-    int &b = a;// Declare b as a reference to a
-
-    b = 10;
-
-    printf("a = %d\n", a);
-    printf("b = %d\n", b);
+    int a = 10;
+    ShowValue(a);
     return 0;
 }
