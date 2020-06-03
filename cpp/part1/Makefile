@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc AddressPass GetString StaticVal Scope VectorAllocate Enumeration
+OBJECTS=Pointer Reference AddCalculation Const ConditionalOperator BitCalc AddressPass GetString StaticVal Scope VectorAllocate Enumeration StringLiteral
 
 all: ${OBJECTS}
 
@@ -40,6 +40,9 @@ VectorAllocate: VectorAllocate.cxx
 
 Enumeration: Enumeration.cxx
 	${CXX} ${CFLAGS} Enumeration.cxx -o Enumeration
+
+StringLiteral: StringLiteral.cxx
+	${CXX} ${CFLAGS} StringLiteral.cxx -o StringLiteral
 
 clean:
 	rm -rf *.o ${OBJECTS}
