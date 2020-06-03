@@ -30,8 +30,9 @@ ENUM ShowEnum(int number)
 
 int main()
 {
-    cout << ShowEnum(0) << endl;
-    cout << ShowEnum(1) << endl;
-    cout << ShowEnum(2) << endl;
+    if(ShowEnum(0) == TEST1)
+    {
+        cout << "TEST1" << endl;
+    }
     return 0;
 }
