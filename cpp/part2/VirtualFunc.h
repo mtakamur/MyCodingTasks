@@ -7,11 +7,11 @@ using namespace std;
 class Bird
 {
     public:
-        void Sing()
+        virtual void Sing()
         {
             cout << "A bird is singing" << endl;
         }
-        void Fly()
+        virtual void Fly()
         {
             cout << "A bird is flying" << endl;
         }
