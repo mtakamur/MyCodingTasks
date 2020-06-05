@@ -1,6 +1,8 @@
 #!/bin/bash
 
-./B_Frog2<<PARAM
-10 4
-40 10 20 70 80 10 20 70 80 60
+./D_Knapsack1<<PARAM
+3 8
+3 30
+4 50
+5 60
 PARAM
