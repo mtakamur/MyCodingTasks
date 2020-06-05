@@ -19,7 +19,8 @@ int main()
     for(int i=0; i<N; i++)
     {
         cin >> h.at(i);
-        DP.at(i) = 10000;// Initialize all nodes with expected maximum cost + 1
+        //DP.at(i) = 10000;// Initialize all nodes with expected maximum cost + 1
+        DP.at(i) = -1;
     }
 
     /////////////////////////
@@ -32,15 +33,20 @@ int main()
     ////////////////////////////////////
     for(int inode=0; inode<N; inode++)
     {
-        for(int jnode=inode+1; jnode-inode<K; jnode++)
+        for (int jnode = inode + 1; jnode - inode <= K && jnode < N; jnode++)
         {
-            if(jnode == N-1) continue;
-            cout << jnode << endl;
-            int dp = abs(h.at(inode) - h.at(jnode));
-            if(dp < DP.at(jnode)) DP.at(jnode) = dp;
+            int dp = abs(h.at(inode) - h.at(jnode)) + DP.at(inode);
+            if(DP.at(jnode) == -1)
+            {
+                DP.at(jnode) = dp;
+            }
+            else if (dp < DP.at(jnode))
+            {
+                DP.at(jnode) = dp;
+            }
         }
     }
 
-    cout << DP.at(N-1) << endl;
+    cout << DP.at(N - 1) << endl;
     return 0;
 }
