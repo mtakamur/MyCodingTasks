@@ -4,11 +4,12 @@
 class StaticMember
 {
     private:
-        static int n;
+        static int number_of_objects;
 
     public:
-        StaticMember(int number);
-        void ShowValue();
+        StaticMember();
+        ~StaticMember();
+        static void ShowNumber();
 };
 
 #endif

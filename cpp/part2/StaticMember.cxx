@@ -2,24 +2,30 @@
 #include <iostream>
 using namespace std;
 
-int StaticMember::n;
+int StaticMember::number_of_objects;
 
-StaticMember::StaticMember(int number)
+StaticMember::StaticMember()
 {
-	n = number;
+	number_of_objects++;
 }
 
-void StaticMember::ShowValue()
+StaticMember::~StaticMember()
 {
-	cout << n << endl;
+	number_of_objects--;
+}
+
+void StaticMember::ShowNumber()
+{
+	cout << "Number of objects in class StaticMember = " << number_of_objects << endl;
 	return;
 }
 
 int main()
 {
-	StaticMember a(100), b(200);
+	StaticMember::ShowNumber();
 
-	a.ShowValue();
-	b.ShowValue();
+	StaticMember a, b;
+
+	StaticMember::ShowNumber();
 	return 0;
 }
