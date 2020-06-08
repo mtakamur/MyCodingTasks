@@ -39,17 +39,18 @@ void CIntArray::ShowAllValue()
     return;
 }
 
-int CIntArray::operator[](int ielement)
+int& CIntArray::operator[](int ielement)
 {
-    if((ielement<0) || (ielement>=nelements))
+    if((ielement >= 0) && (ielement < nelements))
     {
-        cout << "Wrong element ID" << endl;
-        return -1;
+        return array[ielement];
     }
     else
     {
-        return GetValue(ielement);
+        cout << "Wrong index" << endl;
+        exit;
     }
+    
 }
 
 void CIntArray::operator=(CIntArray source)
@@ -83,6 +84,8 @@ int main()
     a.ShowAllValue();
     b.ShowAllValue();
 
+    cout << a[9] << endl;
+    a[9] = 100;
     cout << a[9] << endl;
     
     return 0;

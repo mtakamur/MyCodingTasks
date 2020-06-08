@@ -14,7 +14,7 @@ class CIntArray{
         int GetValue(int position);
         void SetValue(int position, int value);
         void ShowAllValue();
-        int operator[](int ielement);
+        int& operator[](int ielement);
         void operator=(CIntArray target);
 };
 
