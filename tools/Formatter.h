@@ -25,6 +25,7 @@ public:
     ~Format();
 
     void GenerateFormat();
+    void Help();
     void ReadOptions();
     void ShowStatus(); // For debug
     void SwitchOptionFlags();

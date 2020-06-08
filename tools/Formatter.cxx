@@ -50,6 +50,7 @@ void Format::GenerateFormat()
             *ofiles.at(1) << "#define " << program_name << "_H" << endl;
             *ofiles.at(1) << endl;
             *ofiles.at(1) << "#endif" << endl;
+            ofiles.at(1)->close();
         }
         //////////////////////////////////
         // Edit source file information //
@@ -68,6 +69,7 @@ void Format::GenerateFormat()
             *ofiles.at(0) << endl;
             *ofiles.at(0) << "\treturn 0;" << endl;
             *ofiles.at(0) << "}" << endl;
+            ofiles.at(0)->close();
         }
         else
         {
@@ -76,8 +78,38 @@ void Format::GenerateFormat()
             *ofiles.at(0) << endl;
             *ofiles.at(0) << "\treturn 0;" << endl;
             *ofiles.at(0) << "}" << endl;
+            ofiles.at(0)->close();
         }
     }
+    ///////////////////////
+    // Terminate message //
+    ///////////////////////
+    if(!HEADERLESS)
+    {
+        cout << program_name << ".h and " << program_name << ".cxx have been generated." << endl;
+    }
+    else
+    {
+        cout << program_name << ".cxx has been generated." << endl;
+    }
+    return;
+}
+
+void Format::Help()
+{
+    cout << "////////////////////////////////////////////////////////////" << endl;
+    cout << "/////////////////////" << endl;
+    cout << "// List of options //" << endl;
+    cout << "/////////////////////" << endl;
+    cout << "-argless" << endl;
+    cout << "\tCall if you don't need argc and argv in main function." << endl;
+    cout << endl;
+    cout << "-headerless" << endl;
+    cout << "\tGenerate source file without header." << endl;
+    cout << endl;
+    cout << "-nostd" << endl;
+    cout << "\tCall to eliminate \"using namespace std;\" from SOURCE.cxx." << endl;
+    cout << "////////////////////////////////////////////////////////////" << endl;
     return;
 }
 
@@ -144,12 +176,15 @@ void Format::SwitchOptionFlags()
         {
             NOSTD = true;
         }
+        else if (options.at(iopt) == "help" || options.at(iopt) == "h")
+        {
+            Help();
+        }
         else
         {
             cout << "Invalid option input" << endl;
         }
     }
-    
     return;
 }
 

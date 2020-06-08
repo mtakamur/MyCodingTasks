@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=VirtualFunc OperatorOverload StaticMember Template
+OBJECTS=VirtualFunc OperatorOverload StaticMember Template ClassTemplate
 
 all: ${OBJECTS}
 
@@ -16,6 +16,9 @@ StaticMember: StaticMember.h StaticMember.cxx
 
 Template: Template.cxx
 	${CXX} ${CFLAGS} Template.cxx -o Template
+
+ClassTemplate: ClassTemplate.cxx
+	${CXX} ${CFLAGS} ClassTemplate.cxx -o ClassTemplate
 
 clean:
 	rm -rf *.o ${OBJECTS}
