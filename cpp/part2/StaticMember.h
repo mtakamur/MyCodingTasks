@@ -4,7 +4,7 @@
 class StaticMember
 {
     private:
-        int n;
+        static int n;
 
     public:
         StaticMember(int number);

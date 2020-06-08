@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+int StaticMember::n;
+
 StaticMember::StaticMember(int number)
 {
 	n = number;
@@ -19,6 +21,5 @@ int main()
 
 	a.ShowValue();
 	b.ShowValue();
-	a.ShowValue();
 	return 0;
 }
