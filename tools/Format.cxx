@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "Formatter.h"
+#include "Format.h"
 using namespace std;
 
 Format::Format(int number_of_args, char *list_of_args[])
@@ -186,11 +186,4 @@ void Format::SwitchOptionFlags()
         }
     }
     return;
-}
-
-int main(int argc, char *argv[])
-{
-    Format form(argc, argv);
-    form.GenerateFormat();
-    return 0;
 }

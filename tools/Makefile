@@ -1,12 +1,18 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=Formatter
+OBJECTS=Format.o Main.o Formatter
 
 all: ${OBJECTS}
 
-Formatter: Formatter.h Formatter.cxx
-	${CXX} ${CFLAGS} -o Formatter Formatter.cxx
+Format.o: Format.h Format.cxx
+	${CXX} ${CFLAGS} -c Format.cxx
+
+Main.o: Main.cxx
+	${CXX} ${CFLAGS} -c Main.cxx
+
+Formatter: Format.o Main.o
+	${CXX} ${CFLAGS} -o Formatter Format.o Main.o
 
 clean:
 	rm -rf ${OBJECTS}
