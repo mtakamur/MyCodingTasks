@@ -1,31 +1,35 @@
 #ifndef ClassTemplate_H
 #define ClassTemplate_H
 
-template<typename TYPE>
+#include <string>
+
+template <typename TYPE>
 class ClassTemplate
 {
-    private:
-        TYPE number;
+private:
+    TYPE number;
 
-    public:
-        ClassTemplate(TYPE number_to_memorize);
-        ~ClassTemplate();
-        TYPE GetNumber();
+public:
+    ClassTemplate(TYPE number_to_memorize);
+    ~ClassTemplate();
+    TYPE GetNumber();
 };
 
-template<typename TYPE>
+template <typename TYPE>
 ClassTemplate<TYPE>::ClassTemplate(TYPE number_to_memorize)
 {
-	number = number_to_memorize;
+    number = number_to_memorize;
 }
 
-template<typename TYPE>
+template <typename TYPE>
 ClassTemplate<TYPE>::~ClassTemplate()
-{}
+{
+}
 
-template<typename TYPE>
+template <typename TYPE>
 TYPE ClassTemplate<TYPE>::GetNumber()
 {
     return number;
 }
+
 #endif
