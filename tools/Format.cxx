@@ -179,6 +179,7 @@ void Format::SwitchOptionFlags()
         else if (options.at(iopt) == "help" || options.at(iopt) == "h")
         {
             Help();
+            exit(0);
         }
         else
         {
