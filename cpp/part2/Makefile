@@ -1,7 +1,7 @@
 CXX=g++
 CFLAGS=-O2
 
-OBJECTS=VirtualFunc OperatorOverload StaticMember Template ClassTemplate
+OBJECTS=VirtualFunc OperatorOverload StaticMember Template ClassTemplate Cast
 
 all: ${OBJECTS}
 
@@ -19,6 +19,9 @@ Template: Template.cxx
 
 ClassTemplate: ClassTemplate.cxx
 	${CXX} ${CFLAGS} ClassTemplate.cxx -o ClassTemplate
+
+Cast: Cast.cxx
+	${CXX} ${CFLAGS} Cast.cxx -o Cast
 
 clean:
 	rm -rf *.o ${OBJECTS}
