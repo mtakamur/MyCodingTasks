@@ -4,7 +4,7 @@ ROOTLIBS=$(shell root-config --libs)
 CXX=g++
 CFLAGS=-O2 ${ROOTFLAGS}
 
-OBJECTS=TestInput ClockFluctuation TestVector TestIf
+OBJECTS=TestInput ClockFluctuation TestVector TestIf CopyObject
 
 all: ${OBJECTS}
 
@@ -19,6 +19,9 @@ TestVector: TestVector.cxx
 
 TestIf: TestIf.cxx
 	${CXX} ${CFLAGS} TestIf.cxx -o TestIf
+
+CopyObject: CopyObject.cxx
+	${CXX} ${CFLAGS} CopyObject.cxx -o CopyObject
 
 clean:
 	rm -rf *.o ${OBJECTS}
