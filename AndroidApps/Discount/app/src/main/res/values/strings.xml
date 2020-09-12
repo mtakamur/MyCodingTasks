@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Discount</string>
+    <string name="text_amount">Amount(JPY)</string>
+    <string name="text_discount_ratio">Discount ratio(%)</string>
+    <string name="button_calculate">Calculate</string>
+    <string name="invalid_input">Invalid input!</string>
+    <string name="calculation_result">Discounted amount is %1$d JPY</string>
+</resources>
